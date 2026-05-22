@@ -1,0 +1,56 @@
+﻿@model IDGS904ASP.Models.Cinepolis
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+
+    body {
+        background-image: url('/Content/imagenes/cinepolis.jpg');
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+</style>
+
+<h2 style="text-align:center">CINEPOLIS</h2>
+
+<form method="post">
+    <table border="1" align="center" cellpadding="15">
+        <tr>
+            <!-- ENTRADAS -->
+            <td width="350">
+                <h3 style="text-align:center">Entradas</h3>
+                <label>Nombre:</label><br />
+
+                <input type="text"name="Nombre" required value="@(Model != null ? Model.Nombre : "")" /> <br /><br />
+
+                <label>Cantidad de compradores:</label><br />
+                <input type="number" name="Compradores" required /><br /><br />
+
+                <label>Tarjeta CINECO:</label><br />
+                <input type="radio" name="Tarjeta" value="true" required /> Si
+
+                <input type="radio" name="Tarjeta" value="false" /> No<br /><br />
+
+                <label>Cantidad de boletos:</label><br />
+                <input type="number" name="CantidadBoletos" min="1" max="7" required value="@(Model != null ? Model.CantidadBoletos.ToString() : "")" />
+            </td>
+
+            <!-- SALIDAS -->
+            <td width="250">
+                <h3 style="text-align:center">Salidas</h3>
+                <label>Valor a pagar:</label><br /><br />
+                <input type="text" value="@(Model != null ? Model.TotalPagar.ToString() : "")" readonly /> 
+            </td>
+        </tr>
+
+        <!-- ACCIONES -->
+        <tr>
+            <td colspan="2" align="center">
+                <h3>Acciones</h3>
+                <input type="submit" value="Procesar" />
+                <input type="button" value="Salir" onclick="window.location.href='/Cinepolis'" />
+            </td>
+        </tr>
+    </table>
+</form>
