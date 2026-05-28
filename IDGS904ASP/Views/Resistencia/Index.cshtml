@@ -1,0 +1,122 @@
+﻿@model IDGS904ASP.Models.Resistencia
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Resistencia</h2>
+
+@using (Html.BeginForm())
+{
+    <label>Primera Banda</label>
+
+    <select name="Color1">
+
+        <option>Negro</option>
+        <option>Cafe</option>
+        <option>Rojo</option>
+        <option>Naranja</option>
+        <option>Amarillo</option>
+        <option>Verde</option>
+        <option>Azul</option>
+        <option>Violeta</option>
+        <option>Gris</option>
+        <option>Blanco</option>
+
+    </select>
+
+    <br />
+    <br />
+
+    <label>Segunda Banda</label>
+
+    <select name="Color2">
+
+        <option>Negro</option>
+        <option>Cafe</option>
+        <option>Rojo</option>
+        <option>Naranja</option>
+        <option>Amarillo</option>
+        <option>Verde</option>
+        <option>Azul</option>
+        <option>Violeta</option>
+        <option>Gris</option>
+        <option>Blanco</option>
+
+    </select>
+
+    <br />
+    <br />
+
+    <label>Tercera Banda</label>
+
+    <select name="Color3">
+
+        <option>Negro</option>
+        <option>Cafe</option>
+        <option>Rojo</option>
+        <option>Naranja</option>
+        <option>Amarillo</option>
+        <option>Verde</option>
+        <option>Azul</option>
+        <option>Violeta</option>
+        <option>Gris</option>
+        <option>Blanco</option>
+
+    </select>
+
+    <br />
+    <br />
+
+    <label>Tolerancia</label>
+
+    <br />
+
+    @Html.RadioButtonFor(x => x.Tolerancia, "Oro")
+    <label>Oro</label>
+
+    <br />
+
+    @Html.RadioButtonFor(x => x.Tolerancia, "Plata")
+    <label>Plata</label>
+
+    <br />
+    <br />
+
+    <input type="submit" value="Registrar" />
+
+}
+
+@if (Model != null)
+{
+    <br />
+    <br />
+
+    <table border="1" cellpadding="10">
+
+        <tr style="background-color:black; color:white;">
+
+            <th>Color1</th>
+            <th>Color2</th>
+            <th>Color3</th>
+            <th>Tolerancia</th>
+            <th>Valor</th>
+            <th>Valor Minimo</th>
+            <th>Valor Maximo</th>
+
+        </tr>
+
+        <tr align="center">
+
+            <td>@Model.Color1</td>
+            <td>@Model.Color2</td>
+            <td>@Model.Color3</td>
+            <td>@Model.Tolerancia</td>
+            <td>@Model.Valor</td>
+            <td>@Model.ValorMin</td>
+            <td>@Model.ValorMax</td>
+
+        </tr>
+
+    </table>
+}
